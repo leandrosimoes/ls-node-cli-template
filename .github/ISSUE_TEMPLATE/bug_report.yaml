@@ -47,8 +47,8 @@ body:
     required: true
 - type: input
   attributes:
-    label: Android Version
-    description: E.g. Android 10
+    label: OS Version
+    description: E.g. Win 10
   validations:
     required: true
 - type: textarea
