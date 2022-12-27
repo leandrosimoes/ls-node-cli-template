@@ -1,6 +1,8 @@
 # ls-node-cli-template
 
-NodeJS CLI Template 
+NodeJS CLI Template
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/181c0ac6d90f4b219d3f84636462f851)](https://www.codacy.com/gh/leandrosimoes/ls-node-cli-template/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=leandrosimoes/ls-node-cli-template&amp;utm_campaign=Badge_Grade)
 
 ## Preparing Project
 
