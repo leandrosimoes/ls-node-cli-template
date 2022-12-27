@@ -74,15 +74,20 @@ export type TShowMessageParams = {
     color?: ora.Color
     text?: string
     delayTime?: number
+    clear?: boolean
 }
 
 export const showMessage = async (params: TShowMessageParams) => {
     await stopSpinner()
 
+    if (params.clear) {
+        await clearConsole()
+    }
+
     const { 
         color = 'blue',
         text = 'Loading...',
-        delayTime = DEFAULT_DELAY_TIME
+        delayTime = DEFAULT_DELAY_TIME,
     } = params
 
     const foundColor = chalk[color] || chalk.blue
