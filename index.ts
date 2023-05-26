@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { questions, args } from './src/services'
-import { showSpinner, stopSpinner, showMessage } from './src/utils'
+import { questions, args } from './src/services/index.js'
+import { showSpinner, stopSpinner, showMessage } from './src/utils/index.js'
 
 ;(async () => {
     const commandArgs = args.parseArgs(process.argv).parseSync()
