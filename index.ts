@@ -2,7 +2,6 @@
 
 import { questions, args } from './src/services/index.js'
 import { showSpinner, stopSpinner, showMessage } from './src/utils/index.js'
-
 ;(async () => {
     const commandArgs = args.parseArgs(process.argv).parseSync()
 
@@ -14,7 +13,7 @@ import { showSpinner, stopSpinner, showMessage } from './src/utils/index.js'
         await showMessage({
             text: 'Showing a more detailed log',
             color: 'yellow',
-        }) 
+        })
         await showMessage({
             text: JSON.stringify(answers, null, 2),
             color: 'yellow',
@@ -29,10 +28,10 @@ import { showSpinner, stopSpinner, showMessage } from './src/utils/index.js'
         })
     } else {
         await showMessage({
-            text: "Sorry to hear that!",
+            text: 'Sorry to hear that!',
             color: 'red',
             clear: true,
-        })   
+        })
     }
 
     await showSpinner({ text: 'Finishing process...', color: 'green' })

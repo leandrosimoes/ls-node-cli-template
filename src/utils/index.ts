@@ -84,7 +84,7 @@ export const showMessage = async (params: TShowMessageParams) => {
         await clearConsole()
     }
 
-    const { 
+    const {
         color = 'blue',
         text = 'Loading...',
         delayTime = DEFAULT_DELAY_TIME,
