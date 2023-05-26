@@ -1,18 +1,20 @@
-import * as inquirer from 'inquirer'
+import confirm from '@inquirer/confirm'
 
 export type TQuestions = {
-    isHappy: boolean,
+    isHappy: boolean
 }
 
 export const start = async () => {
-    return await inquirer.prompt<TQuestions>([
-        {
-            type: 'confirm',
-            message: 'Are you happy?',
-            name: 'isHappy',
-            default: true,
-        },
-    ])
+    const result: TQuestions = {
+        isHappy: false,
+    }
+
+    result.isHappy = await confirm({
+        message: 'Are you happy?',
+        default: true,
+    })
+
+    return result
 }
 
 export default { start }

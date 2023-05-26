@@ -1,8 +1,8 @@
 import chalk from 'chalk'
-import ora from 'ora'
+import ora, { Color, Ora } from 'ora'
 
-import { DEFAULT_DELAY_TIME } from '../constants'
-import { args } from '../services'
+import { DEFAULT_DELAY_TIME } from '../constants/index.js'
+import { args } from '../services/index.js'
 
 export const delay = (time = 100) => {
     let timeout: any
@@ -14,7 +14,7 @@ export const delay = (time = 100) => {
     })
 }
 
-let spinner: ora.Ora
+let spinner: Ora
 export const stopSpinner = () => {
     if (spinner) {
         spinner.clear()
@@ -35,7 +35,7 @@ export const clearConsole = async () => {
 }
 
 export type TShowSpinnerParams = {
-    color?: ora.Color
+    color?: Color
     text?: string
     shouldClear?: boolean
     delayTime?: number
@@ -71,7 +71,7 @@ export const showSpinner = async (params: TShowSpinnerParams) => {
 }
 
 export type TShowMessageParams = {
-    color?: ora.Color
+    color?: Color
     text?: string
     delayTime?: number
     clear?: boolean
