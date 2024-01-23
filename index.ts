@@ -1,41 +1,39 @@
 #!/usr/bin/env node
 
-import { questions, args } from './src/services/index.js'
-import { showSpinner, stopSpinner, showMessage } from './src/utils/index.js'
-
+import { questions, args, logging } from './src/apis/index.js'
 ;(async () => {
     const commandArgs = args.parseArgs(process.argv).parseSync()
 
-    const answers = await questions.start()
+    const isHappy = await questions.areYouHappy()
 
-    await showSpinner({ text: 'Starting process ...', color: 'blue' })
+    await logging.showSpinner({ text: 'Starting process ...', color: 'blue' })
 
     if (commandArgs.debug) {
-        await showMessage({
+        await logging.showMessage({
             text: 'Showing a more detailed log',
             color: 'yellow',
-        }) 
-        await showMessage({
-            text: JSON.stringify(answers, null, 2),
+        })
+        await logging.showMessage({
+            text: isHappy ? 'You are happy!' : 'You are not happy!',
             color: 'yellow',
         })
     }
 
-    if (answers.isHappy) {
-        await showMessage({
+    if (isHappy) {
+        await logging.showMessage({
             text: "If you are happy, I'm happy too!",
             color: 'green',
             clear: true,
         })
     } else {
-        await showMessage({
-            text: "Sorry to hear that!",
+        await logging.showMessage({
+            text: 'Sorry to hear that!',
             color: 'red',
             clear: true,
-        })   
+        })
     }
 
-    await showSpinner({ text: 'Finishing process...', color: 'green' })
+    await logging.showSpinner({ text: 'Finishing process...', color: 'green' })
 
-    stopSpinner()
+    logging.stopSpinner()
 })()

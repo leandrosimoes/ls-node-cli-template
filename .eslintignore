@@ -2,3 +2,6 @@ node_modules/
 .vscode/
 *.md
 *.config.*
+dist/
+**/*/*.spec.*
+jest.config.js

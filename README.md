@@ -20,6 +20,7 @@ Just execute the command `yarn start`
 * [Ora](https://github.com/sindresorhus/ora/tree/v5.4.1)
 * [Inquirer](https://github.com/SBoudrias/Inquirer.js/tree/inquirer%408.2.3)
 * [Yargs](https://github.com/yargs/yargs/tree/v17.5.1)
+* [ESM](https://nodejs.org/api/esm.html)
 
 ## Dev Environment
 
@@ -28,3 +29,7 @@ Just execute the command `yarn start`
 * [Prettier](https://github.com/prettier/prettier/tree/2.7.1)
 * [Husky](https://typicode.github.io/husky/#/)
 * [Commit Lint](https://commitlint.js.org/#/)
+
+## Common problems testing Typescript + ESM + Jest
+
+- See https://dev.to/logto/migrate-a-60k-loc-typescript-nodejs-repo-to-esm-and-testing-become-4x-faster-22-4a4k

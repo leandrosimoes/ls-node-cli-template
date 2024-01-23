@@ -1,10 +1,10 @@
 {
     "compilerOptions": {
         "module": "Node16",
-        "moduleResolution": "node16",
+        "target": "ESNext",
+        "moduleResolution": "NodeNext",
         "pretty": true,
         "sourceMap": true,
-        "target": "ESNext",
         "resolveJsonModule": true,
         "outDir": "./dist",
         "allowJs": true,
@@ -15,16 +15,18 @@
         "baseUrl": ".",
         "esModuleInterop": true,
         "types": [
-            "node"
+            "node",
+            "jest"
         ]
     },
     "include": [
-        "**/*.ts",
-        "**/*.js",
-        "./typings/yargs-helpers.d.ts"
+        "index.ts",
+        "**/src/**/*.ts"
     ],
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "**/*.spec.ts",
+        "jest.config.js",
     ],
     "ts-node": {
         "transpileOnly": true,
